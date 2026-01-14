@@ -2,9 +2,9 @@ import fs from 'fs'
 import MarkdownIt from 'markdown-it'
 
 const md = new MarkdownIt({
-    html: true,
-    linkify: true,
-    typographer: true,
+  html: true,
+  linkify: true,
+  typographer: true,
 })
 
 const input = fs.readFileSync('CHANGELOG.md', 'utf8')
@@ -22,104 +22,106 @@ const html = `<!DOCTYPE html>
   <style>
     :root {
       --bg: #ffffff;
-      --text: #1a1a1a;
-      --secondary-text: #666666;
-      --border: #e5e7eb;
-      --accent: #2563eb;
-      --code-bg: #f3f4f6;
+      --text: #111827;
+      --secondary-text: #6b7280;
+      --border: #f3f4f6;
+      --accent: #111827;
+      --code-bg: #f9fafb;
       --card-bg: #ffffff;
-      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f172a;
-        --text: #f8fafc;
-        --secondary-text: #94a3b8;
-        --border: #1e293b;
-        --accent: #38bdf8;
-        --code-bg: #1e293b;
-        --card-bg: #1e293b;
-        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-      }
+      --shadow: none;
     }
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
       margin: 0;
-      padding: 2rem 1rem;
+      padding: 4rem 2rem;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 720px;
       margin: 0 auto;
     }
 
     h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      margin-bottom: 2.5rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1rem;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 3rem;
+      color: var(--text);
     }
 
     h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-top: 3rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      z-index: 10;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    h2 a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    h2 a:hover {
+      text-decoration: underline;
+    }
+
+    /* Date style next to version */
+    h2::after {
+      content: attr(data-date);
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--secondary-text);
     }
 
     h3 {
-      font-size: 1.1rem;
+      font-size: 0.875rem;
       font-weight: 600;
       color: var(--secondary-text);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
       margin-top: 2rem;
+      margin-bottom: 1rem;
     }
 
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
     li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: flex-start;
+      padding: 0.4rem 0;
+      color: var(--text);
+      font-size: 1rem;
     }
 
-    li:last-child {
-      border-bottom: none;
-    }
-
-    li::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: bold;
-      margin-right: 0.75rem;
-    }
-
-    a {
-      color: var(--accent);
+    /* GitHub link/commit style */
+    li a {
+      color: var(--secondary-text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.8em;
       text-decoration: none;
-      transition: opacity 0.2s;
+      margin-left: 0.5rem;
+      padding: 0.2rem 0.4rem;
+      background: var(--code-bg);
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
     }
 
-    a:hover {
-      opacity: 0.8;
-      text-decoration: underline;
+    li a:hover {
+      background: var(--border);
+      color: var(--text);
     }
 
     code {
@@ -127,32 +129,38 @@ const html = `<!DOCTYPE html>
       font-size: 0.9em;
       background-color: var(--code-bg);
       padding: 0.2rem 0.4rem;
-      border-radius: 0.25rem;
+      border-radius: 4px;
+      color: var(--text);
     }
 
     pre {
       background-color: var(--code-bg);
-      padding: 1.25rem;
-      border-radius: 0.5rem;
+      padding: 1.5rem;
+      border-radius: 8px;
       overflow-x: auto;
       border: 1px solid var(--border);
+      margin: 1.5rem 0;
     }
 
     .footer {
-      margin-top: 5rem;
+      margin-top: 6rem;
       padding-top: 2rem;
       border-top: 1px solid var(--border);
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       color: var(--secondary-text);
-      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
-    /* GitHub link/commit styles */
-    .commit-link {
-      font-family: monospace;
-      font-size: 0.85em;
-      opacity: 0.7;
-      margin-left: 0.5rem;
+    /* Refined blockquote/p spacing */
+    p {
+      margin: 1rem 0;
+      color: var(--secondary-text);
+    }
+
+    /* Custom classes for version layout */
+    .version-wrapper {
+      margin-bottom: 4rem;
     }
   </style>
 </head>
