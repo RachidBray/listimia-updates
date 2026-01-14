@@ -1,7 +1,5 @@
 # Listimia Theme Changelog
 
-All notable changes to this project will be documented in this file.
-
 
 ## [2.9.1](https://github.com/RachidBray/listimia-v2/compare/v2.3.0...v2.3.1) (2026-01-12)
 

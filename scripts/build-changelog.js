@@ -149,16 +149,6 @@ const html = `<!DOCTYPE html>
       margin: 1.5rem 0;
     }
 
-    .footer {
-      margin-top: 6rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.75rem;
-      color: var(--secondary-text);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
     /* Refined blockquote/p spacing */
     p {
       margin: 1rem 0;
@@ -174,9 +164,6 @@ const html = `<!DOCTYPE html>
 <body>
   <div class="container">
     ${body}
-    <div class="footer">
-      Generated automatically from CHANGELOG.md
-    </div>
   </div>
 </body>
 </html>`
