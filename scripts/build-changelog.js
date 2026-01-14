@@ -9,8 +9,11 @@ const md = new MarkdownIt({
 
 const input = fs.readFileSync('CHANGELOG.md', 'utf8')
 
-// Remove GitHub commit links in parentheses: ([ac69791](https://github.com/.../commit/...))
-const cleanedInput = input.replace(/\s*\(\[[a-f0-9]+\]\(https:\/\/github\.com\/.*\/commit\/[a-f0-9]+\)\)/g, '')
+// 1. Remove commit links with their parentheses: ([hash](https://github.com/...))
+let cleanedInput = input.replace(/\s*\(\[[a-f0-9]+\]\(https:\/\/github\.com\/[^)]+\)\)/g, '')
+
+// 2. Strip remaining GitHub links (like versions in headers), keeping only the text: [2.9.1](https://github.com/...) -> 2.9.1
+cleanedInput = cleanedInput.replace(/\[([^\]]+)\]\(https:\/\/github\.com\/[^)]+\)/g, '$1')
 
 const body = md.render(cleanedInput)
 
