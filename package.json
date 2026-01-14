@@ -1,0 +1,16 @@
+{
+    "name": "listimia-updates",
+    "version": "1.0.0",
+    "description": "Auto-generate changelog.html from CHANGELOG.md",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "build:changelog": "node scripts/build-changelog.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "markdown-it": "^14.1.0"
+    }
+}

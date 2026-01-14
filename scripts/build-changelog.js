@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+import fs from 'fs'
+import MarkdownIt from 'markdown-it'
+
+const md = new MarkdownIt({
+    html: true,
+    linkify: true,
+    typographer: true,
+})
+
+const input = fs.readFileSync('CHANGELOG.md', 'utf8')
+const body = md.render(input)
+
+const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -146,42 +158,13 @@
 </head>
 <body>
   <div class="container">
-    <h1>Listimia Theme Changelog</h1>
-<p>All notable changes to this project will be documented in this file.</p>
-<h2><a href="https://github.com/RachidBray/listimia-v2/compare/v2.3.0...v2.3.1">2.3.1</a> (2026-01-12)</h2>
-<h3>📝 Documentation</h3>
-<ul>
-<li>update footer instructions wording (<a href="https://github.com/RachidBray/listimia-v2/commit/ac69791672517e7e2d877610c5527d38592ff9db">ac69791</a>)</li>
-</ul>
-<h2><a href="https://github.com/RachidBray/listimia-v2/compare/v2.2.0...v2.3.0">2.3.0</a> (2026-01-11)</h2>
-<h3>✨ New Features</h3>
-<ul>
-<li>small test in style.css (<a href="https://github.com/RachidBray/listimia-v2/commit/c8e9e42d6375f3a68034117c9d5f9880609ba4d8">c8e9e42</a>)</li>
-</ul>
-<h2><a href="https://github.com/RachidBray/listimia-v2/compare/v2.1.0...v2.2.0">2.2.0</a> (2026-01-11)</h2>
-<h3>✨ New Features</h3>
-<ul>
-<li>test version update workflow (<a href="https://github.com/RachidBray/listimia-v2/commit/342bfb4e70456a80f382b573f600ffcde2d6fe3f">342bfb4</a>)</li>
-</ul>
-<h3>🐛 Bug Fixes</h3>
-<ul>
-<li><strong>ci:</strong> correct plugin order for version updates (<a href="https://github.com/RachidBray/listimia-v2/commit/3f258a0fa0bcd44fe504f2d1cfecd0e93b856669">3f258a0</a>)</li>
-</ul>
-<h2><a href="https://github.com/RachidBray/listimia-v2/compare/v2.0.0...v2.1.0">2.1.0</a> (2026-01-11)</h2>
-<h3>✨ New Features</h3>
-<ul>
-<li>add new feature (<a href="https://github.com/RachidBray/listimia-v2/commit/71d980d73edec7217025b7da527857ae007c2d12">71d980d</a>)</li>
-</ul>
-<h3>🐛 Bug Fixes</h3>
-<ul>
-<li>downgrade semantic-release packages for Node 20 compatibility (<a href="https://github.com/RachidBray/listimia-v2/commit/35a3011838b216aa3681442c9fbc424d2463ed9f">35a3011</a>)</li>
-</ul>
-<p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>,
-and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
-
+    ${body}
     <div class="footer">
       Generated automatically from CHANGELOG.md
     </div>
   </div>
 </body>
-</html>
+</html>`
+
+fs.writeFileSync('changelog.html', html)
+console.log('✔ changelog.html generated successfully')
