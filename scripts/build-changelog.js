@@ -8,7 +8,11 @@ const md = new MarkdownIt({
 })
 
 const input = fs.readFileSync('CHANGELOG.md', 'utf8')
-const body = md.render(input)
+
+// Remove GitHub commit links in parentheses: ([ac69791](https://github.com/.../commit/...))
+const cleanedInput = input.replace(/\s*\(\[[a-f0-9]+\]\(https:\/\/github\.com\/.*\/commit\/[a-f0-9]+\)\)/g, '')
+
+const body = md.render(cleanedInput)
 
 const html = `<!DOCTYPE html>
 <html lang="en">
