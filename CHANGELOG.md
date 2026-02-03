@@ -9,9 +9,6 @@ All notable changes to this project will be documented in this file.
 
 * Update hero patterns in home page templates
 
-# Listimia Theme Changelog
-
-All notable changes to Listimia will be documented in this file.
 
 ## [2.0.0] - 2026-01-24
 
