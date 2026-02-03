@@ -4,7 +4,6 @@ All notable changes to this project will be documented in this file.
 For instructions on how to update Listimia, please refer to the documentation:
 [How to Update Listimia](https://support.addictedtoweb.com/hc/en-us/articles/33040644078482-How-to-Update-Listimia)
 
----
 
 ## [2.0.1](https://github.com/RachidBray/listimia-v2/compare/v2.0.0...v2.0.1) (2026-02-03)
 
