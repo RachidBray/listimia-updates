@@ -31,7 +31,7 @@ const html = `<!DOCTYPE html>
       --bg: #ffffff;
       --text: #111827;
       --secondary-text: #6b7280;
-      --border: #f3f4f6;
+      --border: #eeeff0;
       --accent: #111827;
       --code-bg: #f9fafb;
       --card-bg: #ffffff;
@@ -57,14 +57,14 @@ const html = `<!DOCTYPE html>
       font-size: 3rem;
       font-weight: 700;
       letter-spacing: -0.04em;
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
       color: var(--text);
     }
 
     h2 {
       font-size: 1.25rem;
       font-weight: 600;
-      margin-top: 4rem;
+      margin-top: 2rem;
       padding-top: 2rem;
       border-top: 1px solid var(--border);
       color: var(--text);
@@ -97,7 +97,7 @@ const html = `<!DOCTYPE html>
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-top: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0rem;
     }
 
     ul {
