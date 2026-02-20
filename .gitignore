@@ -1,5 +1,6 @@
 
 # Ignore everything
+# Ignore everything except a small allowlist
 *
 
 # Except these files
@@ -8,4 +9,5 @@
 !update.json
 
 # Ignore .gitignore itself
-.gitignore
+# Keep .gitignore tracked so we can manage ignores from the repo
+!.gitignore
