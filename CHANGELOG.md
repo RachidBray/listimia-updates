@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 For instructions on how to update Listimia, please refer to the documentation:
 [How to Update Listimia](https://support.addictedtoweb.com/hc/en-us/articles/33040644078482-How-to-Update-Listimia)
 
+## [2.1.0](https://github.com/RachidBray/listimia-v2/compare/v2.0.2...v2.1.0) (2026-02-18)
+
+
+### ✨ New Features
+
+* Add dark mode toggle functionality ([9a87d44](https://github.com/RachidBray/listimia-v2/commit/9a87d448953be22a398a0510c671145d4f443001))
+
+
+### ♻️ Code Refactoring
+
+* Update button styles to enhance visibility and consistency across patterns ([f3db5db](https://github.com/RachidBray/listimia-v2/commit/f3db5db67a582586e3bf1af4370d0a3219e68d31))
+
+
 ## [2.0.2](https://github.com/RachidBray/listimia-v2/compare/v2.0.1...v2.0.2) (2026-02-16)
 
 
