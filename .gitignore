@@ -1,0 +1,13 @@
+
+# Ignore everything
+# Ignore everything except a small allowlist
+*
+
+# Except these files
+!CHANGELOG.md
+!changelog.html
+!update.json
+
+# Ignore .gitignore itself
+# Keep .gitignore tracked so we can manage ignores from the repo
+!.gitignore
