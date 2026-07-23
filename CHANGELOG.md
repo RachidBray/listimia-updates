@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 For instructions on how to update Listimia, please refer to the documentation:
 [How to Update Listimia](https://support.addictedtoweb.com/hc/en-us/articles/33040644078482-How-to-Update-Listimia)
 
+## [2.3.0](https://github.com/RachidBray/listimia-v2/compare/v2.2.1...v2.3.0) (2026-07-23)
+
+
+### ✨ New Features
+
+* Add Listing Card - Style 4 (Horizontal) pattern and template ([9e7a282](https://github.com/RachidBray/listimia-v2/commit/9e7a2825e29df7478ed95c4f31312ed199e7392f))
+* Add Listing Header - Style 4 (Split) pattern ([2c89a66](https://github.com/RachidBray/listimia-v2/commit/2c89a6642ca388241b64a42c42c6cf6d54181aa5))
+* Add typography style variation presets ([2ad4c49](https://github.com/RachidBray/listimia-v2/commit/2ad4c49038ea55b47ae1544cc0bfc0efc8d0b066))
+
+
+### 🐛 Bug Fixes
+
+* update CHANGELOG.md for clarity and reposition update instructions ([99b4527](https://github.com/RachidBray/listimia-v2/commit/99b45273e40e4acb96a6d02565d27409fcddf936))
+
+
 ## [2.2.1](https://github.com/RachidBray/listimia-v2/compare/v2.2.0...v2.2.1) (2026-04-24)
 
 
